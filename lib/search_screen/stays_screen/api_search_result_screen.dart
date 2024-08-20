@@ -10,8 +10,8 @@ class ApiSearchResult extends StatefulWidget {
 }
 
 class _ApiSearchResultState extends State<ApiSearchResult> {
-  final String apiKey = '47ad6937e9msh7ceeafb5e0b2dacp17040ejsnb1577e078225';
-  final String apiHost = 'booking-com15.p.rapidapi.com';
+  final String apiKey = 'YOUR_API_KEY';
+  final String apiHost = 'YOUR_API_HOST';
 
   List<dynamic> hotels = [];
   bool isLoading = false;
@@ -32,8 +32,8 @@ class _ApiSearchResultState extends State<ApiSearchResult> {
       final response = await http.get(
         url,
         headers: {
-          'X-RapidAPI-Key': apiKey,
-          'X-RapidAPI-Host': apiHost,
+          'YOUR_API_KEY': apiKey,
+          'YOUR_API_HOST': apiHost,
         },
       );
 
