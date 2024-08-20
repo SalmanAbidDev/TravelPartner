@@ -1,6 +1,6 @@
 import 'package:booking_application/initial_screens/splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+//import 'package:flutter/services.dart';
 
 void main() {
   /*SystemChrome.setSystemUIOverlayStyle(
