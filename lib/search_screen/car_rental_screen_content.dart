@@ -1,3 +1,4 @@
+import 'package:booking_application/api_section/rental_car_search_result.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
@@ -223,17 +224,35 @@ class _CarRentalScreenContentState extends State<CarRentalScreenContent> {
                         color: Colors.blue,
                         borderRadius: BorderRadius.only(topRight: Radius.zero,topLeft: Radius.zero,bottomLeft: Radius.circular(5),bottomRight: Radius.circular(5)),
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: TextButton(
-                          onPressed: () {
-                            // Add your onPressed code here!
-                          },
-                          child: const Text(
-                            'Search',
-                            style: TextStyle(
-                                color: Colors.white, fontWeight: FontWeight.bold),
-                          ),
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            PageRouteBuilder(
+                              pageBuilder: (context, animation, secondaryAnimation) => const RentalCarSearchResult(),
+                              transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                                // Define the animation curve
+                                const curve = Curves.easeInOut;
+                                // Slide transition
+                                final offsetAnimation = Tween<Offset>(begin: const Offset(1.0, 0.0), end: Offset.zero).animate(
+                                  CurvedAnimation(
+                                    parent: animation,
+                                    curve: curve,
+                                  ),
+                                );
+                                return SlideTransition(
+                                  position: offsetAnimation,
+                                  child: child,
+                                );
+                              },
+                              transitionDuration: const Duration(milliseconds: 500),
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          'Search',
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.bold),
                         ),
                       ),
                     ),

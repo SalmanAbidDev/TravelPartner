@@ -148,17 +148,14 @@ class _AttractionsScreenContentState extends State<AttractionsScreenContent> {
                             color: Colors.blue,
                             borderRadius: BorderRadius.only(topRight: Radius.zero,topLeft: Radius.zero,bottomLeft: Radius.circular(5),bottomRight: Radius.circular(5)),
                           ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: TextButton(
-                              onPressed: () {
-                                // Add your onPressed code here!
-                              },
-                              child: const Text(
-                                'Search',
-                                style: TextStyle(
-                                    color: Colors.white, fontWeight: FontWeight.bold),
-                              ),
+                          child: TextButton(
+                            onPressed: () {
+                              // Add your onPressed code here!
+                            },
+                            child: const Text(
+                              'Search',
+                              style: TextStyle(
+                                  color: Colors.white, fontWeight: FontWeight.bold),
                             ),
                           ),
                         ),

@@ -1,4 +1,4 @@
-import 'package:booking_application/search_screen/stays_screen/api_search_result_screen.dart';
+import 'package:booking_application/api_section/hotels_search_result.dart';
 import 'package:booking_application/search_screen/stays_screen/search_location.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -227,38 +227,35 @@ class _StaysScreenContentState extends State<StaysScreenContent> {
                             color: Colors.blue,
                             borderRadius: BorderRadius.only(topRight: Radius.zero,topLeft: Radius.zero,bottomLeft: Radius.circular(5),bottomRight: Radius.circular(5)),
                           ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: TextButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  PageRouteBuilder(
-                                    pageBuilder: (context, animation, secondaryAnimation) => const ApiSearchResult(),
-                                    transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                                      // Define the animation curve
-                                      const curve = Curves.easeInOut;
-                                      // Slide transition
-                                      final offsetAnimation = Tween<Offset>(begin: const Offset(1.0, 0.0), end: Offset.zero).animate(
-                                        CurvedAnimation(
-                                          parent: animation,
-                                          curve: curve,
-                                        ),
-                                      );
-                                      return SlideTransition(
-                                        position: offsetAnimation,
-                                        child: child,
-                                      );
-                                    },
-                                    transitionDuration: const Duration(milliseconds: 500),
-                                  ),
-                                );
-                              },
-                              child: const Text(
-                                'Search',
-                                style: TextStyle(
-                                    color: Colors.white, fontWeight: FontWeight.bold),
-                              ),
+                          child: TextButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                PageRouteBuilder(
+                                  pageBuilder: (context, animation, secondaryAnimation) => const HotelsSearchResult(),
+                                  transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                                    // Define the animation curve
+                                    const curve = Curves.easeInOut;
+                                    // Slide transition
+                                    final offsetAnimation = Tween<Offset>(begin: const Offset(1.0, 0.0), end: Offset.zero).animate(
+                                      CurvedAnimation(
+                                        parent: animation,
+                                        curve: curve,
+                                      ),
+                                    );
+                                    return SlideTransition(
+                                      position: offsetAnimation,
+                                      child: child,
+                                    );
+                                  },
+                                  transitionDuration: const Duration(milliseconds: 500),
+                                ),
+                              );
+                            },
+                            child: const Text(
+                              'Search',
+                              style: TextStyle(
+                                  color: Colors.white, fontWeight: FontWeight.bold),
                             ),
                           ),
                         ),
@@ -414,8 +411,8 @@ class _StaysScreenContentState extends State<StaysScreenContent> {
                         ),
                       ),
                       Positioned(
-                          top: height * .2875,
-                          left: width * .0195,
+                          top: height * .2879,
+                          left: width * .023,
                           child: Container(
                             width: width * .45,
                             height: height * .125,
